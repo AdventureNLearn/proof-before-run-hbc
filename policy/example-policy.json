@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "agents": {
+    "grok-bot": {
+      "panes": ["hub", "build-1"],
+      "folders": ["bus/", "out/", "handoff/"],
+      "tools": ["read-file", "write-file", "web-search", "route"],
+      "network": "none",
+      "external": "none"
+    },
+    "lead": {
+      "panes": ["hub"],
+      "folders": ["bus/", "handoff/"],
+      "tools": ["route", "read-file"],
+      "network": "none",
+      "external": "none"
+    },
+    "human": {
+      "panes": ["*"],
+      "folders": ["*"],
+      "tools": ["*"],
+      "network": "local-only",
+      "external": "approve-required"
+    }
+  }
+}
