@@ -1,0 +1,18 @@
+id: demo-001
+from: grok-bot
+to: build-1
+lane: lab
+priority: normal
+time: 2026-10-19T21:30:00-04:00
+job: |
+  Read the bus folder and summarize open jobs.
+done-when: summary written to out/summary.txt
+caps:
+  panes: [build-1]
+  folders: [bus/, out/]
+  tools: [read-file, write-file]
+  network: none
+  external: none
+v: 3
+routed:
+sig: (run tools/Sign-BusJob.ps1 -Mode Sign to fill)
